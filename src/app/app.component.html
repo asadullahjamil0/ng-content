@@ -1,11 +1,24 @@
-<h1 *ngIf="myVar">We are now learning ng-Template</h1>
+<h1 *ngIf="myVar;else elseblock">We are now learning ng-Template</h1>
 
 <ng-template [ngIf]="myVar">
   <h1>
     Education is very important to live a intellectual life!
   </h1>
 </ng-template>
+<ng-template #elseblock>
+this is else part
+</ng-template>
 
+<br>
+
+<div *ngFor="let dt of myData; let i = index">
+index - {{i}} {{dt.age}} {{dt.name}} {{dt.city}}
+</div>
+
+<ng-template ngFor let-dt [ngforOf]="myData" let-i="index" >
+  index - {{i}} {{dt.age}} {{dt.name}} {{dt.city}}
+
+</ng-template>
 
 <div class="container ">
   <div class="row">
